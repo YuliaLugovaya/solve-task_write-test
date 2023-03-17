@@ -1,23 +1,27 @@
 const sumHandshake = require('./task.js');
 
-describe("Сумма всех рукопожатий:", () => {
-    test("проверка на равенство (универсальная)", () => {
+describe("Amount of handshakes:", () => {
+    test("check with exact equality", () => {
         expect(sumHandshake(10)).toBe(45);
     })
 
-    test("проверка на равенство (для чисел)", () => {
+    test("check the value of an object", () => {
         expect(sumHandshake(3)).toEqual(3);
     })
 
-    test("проверка на число", () => {
-        expect(sumHandshake(2)).not.toBeNaN();
+    test("a value is true in a boolean context", () => {
+        expect(sumHandshake(7)).toBeTruthy();
     })
 
-    test("проверка на величину (больше, чем)", () => {
+    test("a value is false in a boolean context", () => {
+        expect(sumHandshake()).toBeFalsy();
+    })
+
+    test("amount of handshakes is more than...", () => {
         expect(sumHandshake(5)).toBeGreaterThan(8);
     })
 
-    test("проверка на величину (меньше, чем)", () => {
+    test("amount of handshakes is less than...", () => {
         expect(sumHandshake(7)).toBeLessThan(28);
     })
 })
